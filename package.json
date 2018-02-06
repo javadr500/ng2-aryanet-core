@@ -31,9 +31,7 @@
     "url": "https://github.com/andcoir/ng2-aryanet-core/issues"
   },
   "bundleDependencies": false,
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "deprecated": false,
   "description": "angular 2 core",
   "devDependencies": {
@@ -46,10 +44,17 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-
+    "@angular/router": "^5.0.0",
+    "@angular/http": "^5.0.0",
     "@progress/kendo-angular-grid": "^1.6.2",
     "@progress/kendo-angular-treeview": "^2.1.1",
+    "@progress/kendo-angular-dateinputs": "^1.4.1",
+    "@progress/kendo-angular-dialog": "^1.3.0",
+    "@progress/kendo-angular-excel-export": "^1.0.5",
     "@progress/kendo-data-query": "^1.1.2",
+    "@progress/kendo-drawing": "^1.4.0",
+    "@progress/kendo-angular-intl": "^1.3.0",
+    "@progress/kendo-angular-l10n": "^1.0.5",
     "angular2-busy": "^2.0.4",
     "jalali-moment": "^3.0.2",
     "moment": "^2.19.1",
@@ -58,7 +63,6 @@
     "ng2-datepicker-jalali": "^1.0.9",
     "ng2-jalali-date-picker": "^2.0.3",
     "ng2-slim-loading-bar": "^4.0.0",
-
     "codelyzer": "~2.0.0",
     "core-js": "^2.4.1",
     "jasmine-core": "~2.5.2",
@@ -87,7 +91,7 @@
     "core"
   ],
   "license": "MIT",
-  "main": "./persian/index.js",
+  "main": "./src/core.module.js",
   "name": "ng2-aryanet-core",
   "repository": {
     "type": "git",

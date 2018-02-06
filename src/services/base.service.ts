@@ -24,9 +24,8 @@ import { NotifyManager } from '../utils/notify-manager';
 import { LoadingManager } from '../utils/loading-manager';
 import { OperationResultModel } from '../model/operation-result.model';
 import { AppConfigService } from '../services/app-config.service';
-import { AppModule } from '../../app.module';
 import { error } from 'selenium-webdriver';
-
+import { AryaNetCoreModule } from '../core.module';
 
 @Injectable()
 export class BaseService {
@@ -39,7 +38,7 @@ export class BaseService {
 
   constructor(http: HttpClient, apiUrl: string) {
     this.http = http;
-    this.configService = AppModule.injector.get(AppConfigService);
+    this.configService = AryaNetCoreModule.injector.get(AppConfigService);
     this.BASE_URL = this.configService.config.apiHost;
 
     this.API_URL = this.BASE_URL + apiUrl;

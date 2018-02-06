@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { SnotifyService, SnotifyToastConfig } from 'ng-snotify';
-import { AppModule } from '../../app.module';
+import { AryaNetCoreModule } from '../core.module';
 
 
 @Injectable()
@@ -21,7 +21,7 @@ export class NotifyManager {
 
     };
     constructor() {
-        this.notifyService = AppModule.injector.get(SnotifyService);
+        this.notifyService = AryaNetCoreModule.injector.get(SnotifyService);
     }
 
     static createInstance(): NotifyManager {

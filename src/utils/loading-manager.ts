@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-import { AppModule } from '../../app.module';
+// import { AppModule } from '../../app.module';
 
 
 @Injectable()

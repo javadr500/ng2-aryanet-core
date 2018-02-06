@@ -6,9 +6,9 @@
         "experimentalDecorators": true,
         "declaration": true,
         "moduleResolution": "node",
-        "noUnusedLocals": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "outDir": "./persian",
+        //"noUnusedLocals": true,
+        // "suppressImplicitAnyIndexErrors": true,
+        "outDir": "./dist",
         "sourceMap": true,
         "types": [
             "jasmine",
@@ -18,7 +18,7 @@
     },
     "exclude": [
         "node_modules",
-        "persian",
+        "dist",
         "**/*.spec.ts"
     ],
     "angularCompilerOptions": {
