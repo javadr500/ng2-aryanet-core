@@ -55,38 +55,8 @@ import { AppErrorHandler } from './core/utils/error-handler';
 export class AppModule { }
 ```
 
-<!-- 
-Once NgbModule library is imported, you can use its components in your Angular application:
-
-```xml
-<!-- use ngb-datepicker component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<ngb-datepicker [firstDayOfWeek]="6"></ngb-datepicker>
-```
-
-And set providers in app.component.ts
-```typescript
-// app.component.ts
-import {NgbDateStruct, NgbCalendar, NgbDatepickerI18n, NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
-import {NgbCalendarPersian} from "ng2-datepicker-jalali/persian/ngb-calendar-persian";
-import {NgbDatepickerI18nPersian} from "ng2-datepicker-jalali/persian/ngb-datepicker-i18n-persian";
 
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [
-    {provide: NgbCalendar, useClass: NgbCalendarPersian},
-    {provide: NgbDatepickerI18n, useClass: NgbDatepickerI18nPersian}
-  ]
-})
-export class AppComponent {
-    ...
-}
-``` -->
 
 ## License
 
