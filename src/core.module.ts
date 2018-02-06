@@ -1,9 +1,9 @@
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule,Injector } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DeleteConfirmComponent } from './components/delete-confirm/delete-confirm.component';
+// import { DeleteConfirmComponent } from './components/delete-confirm/delete-confirm.component';
 import { ToolbarButtonComponent } from "./components/toolbar-button/toolbar-button.component";
 import { BreadcrumbComponent } from "./components/breadcrumb.component";
 
@@ -34,14 +34,15 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from "ng-snotify";
     BreadcrumbComponent
   ],
   providers: [
-    BaseService,
-    BaseKendoGridService,
+    // BaseService,
+    // BaseKendoGridService,
 
     { provide: "SnotifyToastConfig", useValue: ToastDefaults },
     SnotifyService,
   ],
   exports: [
     ToolbarButtonComponent,
+    // DeleteConfirmComponent,
     BreadcrumbComponent,
     JalaliPipe,
 

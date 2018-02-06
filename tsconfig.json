@@ -1,3 +1,5 @@
+
+
 {
     "compilerOptions": {
         "module": "es2015",
@@ -20,9 +22,10 @@
         "node_modules",
         "dist",
         "**/*.spec.ts"
-    ],
-    "angularCompilerOptions": {
-        "strictMetadataEmit": true,
-        "skipTemplateCodegen": true
-    }
+    ]
+    //,
+    // "angularCompilerOptions": {
+    //     "strictMetadataEmit": true,
+    //     "skipTemplateCodegen": true
+    // }
 }

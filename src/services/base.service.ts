@@ -1,34 +1,31 @@
 
-import { Injectable, Inject, ReflectiveInjector, Injector } from '@angular/core';
-import {
-  Http, Response, ResponseContentType,
-  Headers, RequestOptions, RequestMethod, URLSearchParams
-} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Response, URLSearchParams } from '@angular/http';
 
 import {
-  HttpClient, HttpResponse,
-  HttpHeaders, HttpRequest,
+  HttpClient,
+  HttpHeaders,
   HttpParams,
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/share';
+import "rxjs/add/operator/catch";
+import "rxjs/add/observable/throw";
+import "rxjs/add/operator/map";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/share";
 
 
-import { NotifyManager } from '../utils/notify-manager';
-import { LoadingManager } from '../utils/loading-manager';
-import { OperationResultModel } from '../model/operation-result.model';
-import { AppConfigService } from '../services/app-config.service';
-import { error } from 'selenium-webdriver';
-import { AryaNetCoreModule } from '../core.module';
+import { NotifyManager } from "../utils/notify-manager";
+import { LoadingManager } from "../utils/loading-manager";
+import { OperationResultModel } from "../model/operation-result.model";
+import { AppConfigService } from "../services/app-config.service";
+import { AryaNetCoreModule } from "../core.module";
 
 @Injectable()
 export class BaseService {
+
   configService: AppConfigService;
   loading: LoadingManager;
   notify: NotifyManager;
@@ -59,7 +56,7 @@ export class BaseService {
 
   public getAllItems(url?: string): Observable<any[]> {
     const that = this;
-    return this.get('getallitems')
+    return this.get("getallitems")
       .map((res: OperationResultModel) => {
         let result: any;
         that.operationHandling(res, r => {
@@ -100,7 +97,7 @@ export class BaseService {
 
     return this.http.get(httpUrl, {
       params: httparams,
-      responseType: 'blob'
+      responseType: "blob"
     });
     // .map(res => res.())
     // .catch(this.handleError)
@@ -114,23 +111,21 @@ export class BaseService {
     } else {
       httpUrl += `export/downloadpdf`;
     }
-    const h = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const h = new HttpHeaders({ "Content-Type": "application/x-www-form-urlencoded" });
     // const h = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { htmlString: JSON.stringify(html) };
 
     this.http.post(httpUrl, JSON.stringify(html), {
       headers: h
-    })
-      .subscribe((r) => {
-      }, err => {
-        console.log(err);
-      });
+    }).subscribe((r) => { }, err => {
+      console.log(err);
+    });
     // .map(res => res.())
     // .catch(this.handleError)
   }
 
   public exportExcel(obj: any): Observable<Blob> {
-    return this.downloadFile(obj, 'exportExcel');
+    return this.downloadFile(obj, "exportExcel");
 
   }
 
@@ -142,8 +137,8 @@ export class BaseService {
     const httpUrl = `${this.API_URL}${url}`;
     const headers = new HttpHeaders(
       {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded'
+        "Accept": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
       });
 
     const that = this;
@@ -205,7 +200,7 @@ export class BaseService {
     }
 
     if (id !== null) {
-      httpUrl += '/' + id;
+      httpUrl += "/" + id;
     }
     // const headers = new HttpHeaders(
     //   {
@@ -226,11 +221,11 @@ export class BaseService {
   // }
 
   public add(model: any): Observable<OperationResultModel> {
-    return this.post(model, '');
+    return this.post(model, "");
   }
 
   public edit(model: any): Observable<OperationResultModel> {
-    return this.post(model, '/Edit' /*, 'Edit'*/);
+    return this.post(model, "/Edit" /*, 'Edit'*/);
   }
 
 
@@ -239,11 +234,11 @@ export class BaseService {
   // }
 
   public deleteRange(id: Array<number>): Observable<OperationResultModel> {
-    let q = '?';
+    let q = "?";
     for (let i = 0; i < id.length; i++) {
       q += `ids=${id[i]}&`;
     }
-    return this.post(id, '/deleteRange/' + q);
+    return this.post(id, "/deleteRange/" + q);
   }
   // public deleteAll(): Observable<OperationResultModel> {
   //   return this.post(null, '/removeall');
@@ -271,7 +266,7 @@ export class BaseService {
   // }
 
   public deleteAll(): Observable<OperationResultModel> {
-    return this.deleteRequest(null, '/deleteAll');
+    return this.deleteRequest(null, "/deleteAll");
   }
 
 
@@ -292,7 +287,7 @@ export class BaseService {
 
 
   protected handleError(err: Response): Observable<any> {
-    console.error('observable error: ', err);
+    console.error("observable error: ", err);
     return Observable.throw(err.statusText);
   }
 

@@ -17,7 +17,6 @@ import {
 } from '@progress/kendo-angular-grid';
 
 import { NotifyManager } from '../utils/notify-manager';
-import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 import { BaseKendoGridService } from '../services/base-kendo-grid.service';
 import { BaseComponent } from './base.component';
 
@@ -57,9 +56,6 @@ export abstract class BaseKendoGridComponent extends BaseComponent {
 
     protected dataItemSelected = Array<any>();
     protected selectAllState: SelectAllCheckboxState = 'unchecked';
-
-    // @ContentChild('deleteConfirm') deleteConfirm: ElementRef;
-    // @ViewChild(DeleteConfirmComponent) deleteConfirm2: DeleteConfirmComponent;
 
     constructor(service: BaseKendoGridService) {
         super();
