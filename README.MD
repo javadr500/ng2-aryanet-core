@@ -1,6 +1,6 @@
 # ng2-aryanet-core
 
-datepicker jalali and datepicker persian
+Angular2 AryaNet Core
 
 ## Test
 
@@ -13,48 +13,49 @@ datepicker jalali and datepicker persian
 To install this library, run:
 
 ```bash
-$ npm install ng2-datepicker-jalali --save
+$ npm install ng2-aryanet-core --save
 ```
 
 ## Consuming
 
 ```bash
-$ npm install ng2-datepicker-jalali
+$ npm install ng2-aryanet-core
 ```
 
 and then from your Angular `AppModule`:
 
 ```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AryaNetCoreModule } from './core/core.module';
+import { AppConfigService } from './core/services/app-config.service';
+import { HttpInterceptedService } from './core/interceptors/http-interceptor.service';
+import { AppErrorHandler } from './core/utils/error-handler';
 
-// Import NgbModule library
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+  ...
   ],
   imports: [
-    BrowserModule,
+ ...
 
-    // Specify NgbModule library as an import
-    NgbModule.forRoot()
+    AryaNetCoreModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+     AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: init,
+      multi: true,
+      deps: [AppConfigService]
+    },
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+  ]
 })
 export class AppModule { }
 ```
 
-edit css `styles.css`
-```css
-/*styles.css*/
-@import '~bootstrap/dist/css/bootstrap.min.css';
-```
-
+<!-- 
 Once NgbModule library is imported, you can use its components in your Angular application:
 
 ```xml
@@ -85,7 +86,8 @@ import {NgbDatepickerI18nPersian} from "ng2-datepicker-jalali/persian/ngb-datepi
 export class AppComponent {
     ...
 }
-```
+``` -->
+
 ## License
 
-MIT © [Sajad Mehrabi](mailto:info@mehrabisajad.ir)
+MIT © [AryaNet](mailto:javad_r_85@yahoo.com)
