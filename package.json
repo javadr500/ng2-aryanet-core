@@ -1,6 +1,12 @@
 {
+   
+  "name": "ng2-aryanet-core",
+  "version": "1.0.2",
+  "license": "MIT",
+  "main": "index",
+
   "_from": "ng2-aryanet-core@^1.0.0",
-  "_id": "ng2-aryanet-core@1.0.0",
+  "_id": "ng2-aryanet-core@1.0.2",
   "_inBundle": false,
   "_integrity": "sha1-UUgPhbBWr33iiUrkS1SeOHZjjpk=",
   "_location": "/ng2-aryanet-core",
@@ -90,9 +96,6 @@
     "angular2",
     "core"
   ],
-  "license": "MIT",
-  "main": "./src/core.module.js",
-  "name": "ng2-aryanet-core",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andcoir/ng2-aryanet-core.git"
@@ -102,6 +105,6 @@
     "prepublish": "tsc",
     "test": "tsc && karma start",
     "tsc": "tsc"
-  },
-  "version": "1.0.0"
+  }
+ 
 }
